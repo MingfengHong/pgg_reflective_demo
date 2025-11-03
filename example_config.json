@@ -1,0 +1,42 @@
+{
+  "model": {
+    "N": 50,
+    "endowment": 10.0,
+    "r": 1.6,
+    "seed": 42
+  },
+  "network": {
+    "kind": "ws",
+    "k": 6,
+    "p": 0.1
+  },
+  "institution": {
+    "tau": 0.4,
+    "fine_F": 2.0,
+    "punish_cost_Cp": 0.6,
+    "meta_on": false,
+    "delta_F": 0.2,
+    "delta_tau": 0.02,
+    "tau_min": 0.0,
+    "tau_max": 0.8,
+    "F_min": 0.0,
+    "F_max": 5.0
+  },
+  "agent": {
+    "eta": 0.3,
+    "eps_factor": 0.1,
+    "alpha_punish": 1.0,
+    "alpha_meta": 0.5
+  },
+  "simulation": {
+    "steps": 200,
+    "warmup": 50
+  },
+  "output": {
+    "directory": "results",
+    "save_csv": true,
+    "save_plots": true
+  },
+  "description": "默认配置：50个智能体，小世界网络，无元规范，200步模拟"
+}
+
