@@ -109,19 +109,25 @@ class PGGAgent(Agent):
         决策逻辑：
         - 基于对他人的经验性期望 E_i
         - 基于内化的规范阈值 theta_i
+        - 基于制度威慑（罚金）fine_F（关键耦合点）
         - 使用logistic函数平滑决策
         """
         inst = self.model.institution
         
-        # 简单的条件性合作者模型
-        # signal = beta0 + beta1 * (E_i - target) + beta2 * (制度阈值 - 主观阈值)
-        beta0, beta1, beta2 = -1.0, 0.15, 2.0
+        # 条件性合作者模型（含威慑信号）
+        # signal = beta0 + beta1 * (E_i - target) + beta2 * (制度阈值 - 主观阈值) + beta3 * 威慑信号
+        beta0, beta1, beta2, beta3 = -1.0, 0.15, 2.0, 0.8
         target = self.theta_i * self.E  # 内化的应当贡献量
+        
+        # 威慑信号：罚金越高，合规动机越强
+        # 将 fine_F 归一化到 [0, 1] 范围（假设 F_max = 5.0）
+        deterrence_signal = inst.fine_F / inst.F_max
         
         signal = (
             beta0 
             + beta1 * (self.E_i - target)
             + beta2 * (inst.tau * self.E - target)
+            + beta3 * deterrence_signal  # 关键：罚金越高，signal越大，贡献越多
         )
         
         # Logistic变换得到贡献比例

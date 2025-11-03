@@ -1,4 +1,4 @@
-# 公共物品博弈 + 内生制度演化：最小可运行 Demo
+# 公共物品博弈 + 内生制度演化 Demo
 
 > "二阶控制论"与 ABM：如何模拟"会反思"的智能体？
 
@@ -659,5 +659,39 @@ def step(self):
 
 ### Goodhart's Law 与模型表演性
 
-- MacKenzie, D. (2006). *An Engine, Not a Camera*. MIT Press. (经济学模型的述行性)
+- MacKenzie, D. (2006). *An Engine, Not a Camera*. MIT Press. (经济学模型的表演性)
 - Thomas, R., & Uminsky, D. (2020). The problem with metrics is a big problem. *arXiv:2002.08512*.
+
+---
+
+## 致谢
+
+本项目受到以下工作的启发：
+
+- Mesa 开发团队的优秀 ABM 框架
+- Axelrod 的元规范模型
+- Ostrom 的制度设计原则
+- 主动推断与自由能原理社区
+- 生成式社会科学范式
+
+---
+
+## 许可证
+
+MIT License
+
+---
+
+## 联系方式
+
+如有问题或建议，请通过以下方式联系：
+
+- GitHub Issues
+- Email: [您的邮箱]
+
+---
+
+**Happy Modeling! 🚀**
+
+让我们一起探索"会反思"的智能体如何塑造社会制度！
+
